@@ -15,17 +15,17 @@ jobs:
       url: ${{ steps.build-publish.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      # - name: Checkout code
+      #   uses: actions/checkout@v2
 
-      - name: Install dependencies
-        run: npm install
+      # - name: Install dependencies
+      #   run: npm install
 
-      - name: Build project
-        run: npx ng build # or your specific build command
+      # - name: Build project
+      #   run: npx ng build # or your specific build command
 
       - id: build-publish
         uses: bitovi/github-actions-angular-to-github-pages@v1.0.0
-      with:
-        path: dist/${{ github.event.repository.name }}/browser                            # default
-        build_command: npm run build -- --base-href=/${{ github.event.repository.name }}/ # default
+        with:
+          path: dist/${{ github.event.repository.name }}/browser # default
+          build_command: npm run build -- --base-href=/${{ github.event.repository.name }}/ # default
