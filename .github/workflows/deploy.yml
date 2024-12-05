@@ -25,6 +25,6 @@ jobs:
         run: ng build # or your specific build command
 
       - id: build-publish
-        uses: holysheepdev/farmCMS@main
+        uses: holysheepdev/farmCMS@0.0.0
         with:
           path: farm-cms/dist/farm-cms/browser
