@@ -25,6 +25,7 @@ jobs:
         run: ng build # or your specific build command
 
       - id: build-publish
-        uses: holysheepdev/farmCMS@v0.0-initial.0
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          path: farm-cms/dist/farm-cms/browser
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Update with your build output directory
